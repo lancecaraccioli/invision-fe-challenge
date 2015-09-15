@@ -15,4 +15,4 @@ npm install
 ```
 npm start
 ```
-Once the local web server is started. The project should be available locally at http://localhost:8000
+Once the local web server is started. The project should be available locally at [http://localhost:8000](http://localhost:8000)
