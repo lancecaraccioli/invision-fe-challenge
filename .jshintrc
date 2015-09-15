@@ -9,5 +9,9 @@
     "afterEach": false,
     "module": false,
     "inject": false
-  }
+  },
+  "indent": 2,
+  "curly": true,
+  "camelcase": true,
+  "quotmark": "single"
 }
