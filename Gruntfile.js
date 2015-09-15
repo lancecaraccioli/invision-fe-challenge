@@ -57,8 +57,10 @@ module.exports = function(grunt) {
 
   });
 
+  grunt.registerTask('check-code-standards', [
+    'jshint:validate'
+  ]);
   grunt.registerTask('build', [
-    'jshint:validate',
     'sass:build'
   ]);
   grunt.registerTask('dist', [
@@ -66,6 +68,7 @@ module.exports = function(grunt) {
     'cssmin:minify'
   ]);
   grunt.registerTask('serve', [
+    'check-code-standards',
     'build',
     'connect:webapp',
     'watch'
