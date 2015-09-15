@@ -1,3 +1,20 @@
+$fontStack: Montserrat, sans-serif;
+$primaryTrim: darkcyan;
+$primaryBackgroundColor: #fff;
+$primaryFontColor: #262728;
+$headerBackground: $primaryFontColor;
+$headerFontColor: $primaryBackgroundColor;
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: $fontStack;
+  color: #fff;
+}
+
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
