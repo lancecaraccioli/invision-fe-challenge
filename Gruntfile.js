@@ -21,6 +21,38 @@ module.exports = function(grunt) {
           'app/app.css': 'app/app.scss'
         }
       }
+    },
+    cssmin: {
+      options: {
+        banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
+      },
+      minify: {
+        files: {
+          'app/app.css': 'app/app.css'
+        }
+      }
+    },
+    watch: {
+      options: {
+        livereload: 35729
+      },
+      js: {
+        files: ['**/*.js'],
+        tasks: ['jshint']
+      },
+      scss: {
+        files: ['**/*.scss'],
+        tasks: ['sass:build']
+      }
+    },
+    connect: {
+      webapp: {
+        options: {
+          port: 8000,
+          hostname: '*',
+          base: './app'
+        }
+      }
     }
 
   });
@@ -29,11 +61,28 @@ module.exports = function(grunt) {
     'jshint:validate',
     'sass:build'
   ]);
+  grunt.registerTask('dist', [
+    'build',
+    'cssmin:minify'
+  ]);
+  grunt.registerTask('serve', [
+    'build',
+    'connect:webapp',
+    'watch'
+  ]);
+  grunt.registerTask('serve-dist', [
+    'dist',
+    'connect:webapp'
+  ]);
+  grunt.registerTask('default', [
+    'serve'
+  ]);
 
   // load tasks
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
 };
