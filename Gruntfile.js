@@ -10,10 +10,25 @@ module.exports = function(grunt) {
         reporter: require('jshint-stylish'),
         jshintrc: '.jshintrc'
       },
-      build: ['Gruntfile.js', 'app/**/*.js', '!app/bower_components/**/*.js']
+      validate: ['Gruntfile.js', 'app/**/*.js', '!app/bower_components/**/*.js']
+    },
+    sass: {
+      options: {
+        style: 'expanded'
+      },
+      build: {
+        files: {
+          'app/app.css': 'app/app.scss'
+        }
+      }
     }
 
   });
+
+  grunt.registerTask('build', [
+    'jshint:validate',
+    'sass:build'
+  ]);
 
   // load tasks
   grunt.loadNpmTasks('grunt-contrib-jshint');
