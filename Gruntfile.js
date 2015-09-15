@@ -43,6 +43,9 @@ module.exports = function(grunt) {
       scss: {
         files: ['**/*.scss'],
         tasks: ['sass:build']
+      },
+      html: {
+        files: ['**/*.html']
       }
     },
     connect: {
