@@ -2,10 +2,16 @@
 
 angular.module('myApp', [
   'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
+  'ui.router',
+  'myApp.posts',
+  'myApp.photos',
+  'myApp.videos',
   'myApp.version'
 ]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
+config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
+  $urlRouterProvider.otherwise('/');
+
+  $stateProvider.state('landing', {
+    url: '/'
+  })
 }]);
