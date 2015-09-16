@@ -22,17 +22,26 @@
     <user-menu user="app.authenticatedUser"></user-menu>
   </header>
   <main>
-    <header>
-      <section class="primary-background">
+    <section>
+      <header>
         <composer></composer>
+      </header>
+      <footer>
         <navigation></navigation>
-      </section>
-    </header>
-
-    <div ui-view>TODO add throbber</div>
+      </footer>
+    </section>
+    <section ui-view>
+      <span>TODO add throbber</span>
+    </section>
   </main>
   <footer>
-
+    <ul class="menu-horizontal">
+      <li><a href>About Us</a></li>
+      <li><a href>Support</a></li>
+      <li><a href>Privacy</a></li>
+      <li><a href>Terms</a></li>
+      <li><span class="fa fa-copyright"></span><span class="reader-only">Copyright </span><span>2015 SimplySocial</span></li>
+    </ul>
   </footer>
 
   <script src="bower_components/angular/angular.js"></script>

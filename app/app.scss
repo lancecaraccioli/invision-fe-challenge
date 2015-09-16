@@ -1,11 +1,5 @@
-$fontStack: Work Sans, sans-serif;
-$primaryTrim: rgb(0, 204, 153);
-$primaryBackgroundColor: #fff;
-$primaryFontColor: #262728;
-$headerBackgroundColor: $primaryFontColor;
-$headerFontColor: $primaryBackgroundColor;
-$headerDeactivatedFontColor: darken($headerFontColor, 25%);
-$borderRadius: 5px;
+/* define theme variables */
+@import 'theme';
 
 html, body {
   height: 100%;
@@ -26,29 +20,43 @@ a, a:hover {
   color: inherit;
 }
 
+.menu-horizontal {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  list-style: none;
+  & > li {
+    display: inline-block;
+  }
+}
+
+.reader-only {
+  position: absolute;
+  left: -10000px;
+}
+
 body {
   font-family: $fontStack;
   color: $primaryFontColor;
-  & > header {
+  > header {
     position: relative;
-    z-index: 20;
+    z-index: 30;
     background-color: $headerBackgroundColor;
     color: $primaryBackgroundColor;
     height: 60px;
     width: 100%;
   }
-  & > main {
-    margin-left: 1px;
+  > main {
     position: relative;
-    z-index: 10;
-    header {
+    z-index: 20;
+    > section:first-child {
       background-image: url(/img/background-slice.jpg);
       background-position: bottom left;
       background-repeat: repeat-x;
       height: 425px;
       width: 100%;
       position: relative;
-      > section {
+      > header {
         display: block;
         width: 100%;
         height: 100%;
@@ -60,15 +68,28 @@ body {
 
     }
   }
-}
-
-.menu-horizontal {
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-  list-style: none;
-  & > li {
-    display: inline-block;
+  > footer {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    border-top: 1px solid $primaryBorderColor;
+    padding: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $footerFontColor;
+    font-size: 12px;
+    .menu-horizontal {
+      > li {
+        margin-right: 23px;
+        &:last-child {
+          margin-right: 0;
+          color: $primaryFontColor;
+        }
+        .fa {
+          margin-right: 5px;
+        }
+      }
+    }
   }
 }
 

@@ -1,5 +1,3 @@
-$navigationFontColor: $headerFontColor;
-$layoutStateDeactivatedFontColor: $headerDeactivatedFontColor;
 
 .navigation-bar {
   position: absolute;
@@ -10,18 +8,18 @@ $layoutStateDeactivatedFontColor: $headerDeactivatedFontColor;
       display: inline-block;
       &.site-navigation {
         float: left;
-        .action {
+        li {
           cursor: pointer;
           margin-right: 40px;
-          border-bottom: 3px solid transparent;
+          border-bottom: 4px solid transparent;
           font-weight: 700;
-          color: $layoutStateDeactivatedFontColor;
+          color: $navigationInactiveTabFontColor;
           &:last-child {
             margin-right: 0;
           }
           &.active {
             color: $navigationFontColor;
-            border-bottom: 3px solid $primaryTrim;
+            border-bottom: 4px solid $primaryBrandColor;
           }
           a {
             display: inline-block;
@@ -31,11 +29,11 @@ $layoutStateDeactivatedFontColor: $headerDeactivatedFontColor;
       }
       &.layout-state-options {
         float: right;
-        .action {
+        li {
           cursor: pointer;
           margin-right: 0;
           font-weight: 700;
-          color: $layoutStateDeactivatedFontColor;
+          color: $navigationInactiveTabFontColor;
           &.active {
             color: $navigationFontColor;
           }
@@ -51,6 +49,5 @@ $layoutStateDeactivatedFontColor: $headerDeactivatedFontColor;
     color: $navigationFontColor;
     font-size: 14px;
     text-transform: uppercase;
-
   }
 }
