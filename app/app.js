@@ -6,12 +6,15 @@ angular.module('myApp', [
   'myApp.posts',
   'myApp.photos',
   'myApp.videos',
-  'myApp.version'
+  'myApp.user'
 ]).
-config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
-  $urlRouterProvider.otherwise('/');
+  config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
+    $urlRouterProvider.otherwise('/');
 
-  $stateProvider.state('landing', {
-    url: '/'
-  })
-}]);
+    $stateProvider.state('landing', {
+      url: '/'
+    });
+  }]).
+  controller('AppCtrl', ['authentication', function(authentication) {
+    this.authenticatedUser = authentication.user;////
+  }]);

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,20 +12,30 @@
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body ng-app="myApp">
+<body ng-app="myApp" ng-controller="AppCtrl as app">
   <header>
     <div class="logo">Simply Social</div>
     <div class="compose">New Message</div>
     <div class="search"><label id="search-label">Search<input id="search" type="text" /></label></div>
-    <user-menu></user-menu>
+    <user-menu user="app.authenticatedUser"></user-menu>
   </header>
-  <ul class="menu">
-    <li><a ui-sref="posts">All Posts</a></li>
-    <li><a ui-sref="photos">Photos</a></li>
-    <li><a ui-sref="videos">Videos</a></li>
-  </ul>
+  <main>
+    <header>
+      <div>
+        <composer></composer>
+        <ul class="menu">
+          <li><a ui-sref="posts">All Posts</a></li>
+          <li><a ui-sref="photos">Photos</a></li>
+          <li><a ui-sref="videos">Videos</a></li>
+        </ul>
+      </div>
+    </header>
 
-  <div ui-view>TODO add throbber</div>
+    <div ui-view>TODO add throbber</div>
+  </main>
+  <footer>
+
+  </footer>
 
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
@@ -33,8 +44,8 @@
   <script src="posts/posts-controller.js"></script>
   <script src="photos/photos-controller.js"></script>
   <script src="videos/videos-controller.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
+  <script src="components/user/authentication-service.js"></script>
+  <script src="components/user/user-menu-directive.js"></script>
+  <script src="components/user/user.js"></script>
 </body>
 </html>

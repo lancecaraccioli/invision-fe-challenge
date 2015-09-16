@@ -37,8 +37,8 @@ module.exports = function(grunt) {
         livereload: 35729
       },
       js: {
-        files: ['**/*.js'],
-        tasks: ['jshint']
+        files: ['**/*.js']//,
+        //tasks: ['jshint:validate']
       },
       scss: {
         files: ['**/*.scss'],
