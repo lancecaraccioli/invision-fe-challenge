@@ -2,9 +2,9 @@ $fontStack: Work Sans, sans-serif;
 $primaryTrim: rgb(0, 204, 153);
 $primaryBackgroundColor: #fff;
 $primaryFontColor: #262728;
-$deactivatedFontColor: grey;
 $headerBackgroundColor: $primaryFontColor;
 $headerFontColor: $primaryBackgroundColor;
+$headerDeactivatedFontColor: darken($headerFontColor, 25%);
 $borderRadius: 5px;
 
 html, body {
@@ -48,7 +48,7 @@ body {
       height: 425px;
       width: 100%;
       position: relative;
-      > div {
+      > section {
         display: block;
         width: 100%;
         height: 100%;
@@ -57,11 +57,7 @@ body {
         background-position: center bottom;
         background-repeat: no-repeat;
       }
-      > section {
-        width: 600px;
-        margin: 0 auto;
-        height: 100%;
-      }
+
     }
   }
 }

@@ -1,5 +1,5 @@
 $navigationFontColor: $headerFontColor;
-$layoutStateDeactivatedFontColor: $deactivatedFontColor;
+$layoutStateDeactivatedFontColor: $headerDeactivatedFontColor;
 
 .navigation-bar {
   position: absolute;
@@ -12,13 +12,16 @@ $layoutStateDeactivatedFontColor: $deactivatedFontColor;
         float: left;
         .action {
           cursor: pointer;
-          margin-right: 45px;
+          margin-right: 40px;
+          border-bottom: 3px solid transparent;
+          font-weight: 700;
+          color: $layoutStateDeactivatedFontColor;
           &:last-child {
             margin-right: 0;
           }
           &.active {
+            color: $navigationFontColor;
             border-bottom: 3px solid $primaryTrim;
-            font-weight: 700;
           }
           a {
             display: inline-block;
@@ -31,9 +34,9 @@ $layoutStateDeactivatedFontColor: $deactivatedFontColor;
         .action {
           cursor: pointer;
           margin-right: 0;
+          font-weight: 700;
           color: $layoutStateDeactivatedFontColor;
           &.active {
-            font-weight: 700;
             color: $navigationFontColor;
           }
           a {
