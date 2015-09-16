@@ -1,50 +1,56 @@
-$navigationFontColor: lighten($primaryTrim, 40%);
+$navigationFontColor: $headerFontColor;
+$layoutStateDeactivatedFontColor: $deactivatedFontColor;
 
-.navigation {
-  font-weight: 100;
-  background-color: darken(rgba($primaryTrim, 0.7), 5%);
-  height: 158px;
-  width: 578px;
-  margin: 0 auto;
-  border-radius: $borderRadius;
-  margin-top: 123px;
-  padding: 42px 30px;
-  color: $navigationFontColor;
-  font-size: 14px;
-  input.message {
-    width:100%;
-    border: 0;
-    background-color: transparent;
-    margin-bottom: 35px;
-    /*color: #70c9b3;*/
-    &:focus {
-      outline: 0;
-    }
-    font-size: 30px;
-  }
-  .placeholder {
-    color: $navigationFontColor;
-  }
-  ::-webkit-input-placeholder {
-    color: $navigationFontColor;
-  }
-  :-moz-placeholder {
-    color: $navigationFontColor;
-  }
-  ::moz-placeholder {
-    color: $navigationFontColor;
-  }
-  :-ms-input-placeholder {
-    color: $navigationFontColor;
-  }
-
-  .actions {
-    .action {
-      cursor: pointer;
-      margin-right: 40px;
-      a {
-        padding-left: 5px;
+.navigation-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  .navigation {
+    .menu-horizontal {
+      display: inline-block;
+      &.site-navigation {
+        float: left;
+        .action {
+          cursor: pointer;
+          margin-right: 45px;
+          &:last-child {
+            margin-right: 0;
+          }
+          &.active {
+            border-bottom: 2px solid $primaryTrim;
+            font-weight: 700;
+          }
+          a {
+            display: inline-block;
+            padding: 15px 7px;
+          }
+        }
+      }
+      &.layout-state-options {
+        float: right;
+        .action {
+          cursor: pointer;
+          margin-right: 13px;
+          &:last-child {
+            margin-right: 0;
+          }
+          color: $layoutStateDeactivatedFontColor;
+          &.active {
+            font-weight: 700;
+            color: $navigationFontColor;
+          }
+          a {
+            display: inline-block;
+            padding: 15px 7px;
+          }
+        }
       }
     }
+    width: 578px;
+    margin: 0 auto;
+    color: $navigationFontColor;
+    font-size: 14px;
+    text-transform: uppercase;
+
   }
 }

@@ -11,6 +11,11 @@ angular.module('myApp', [
   'myApp.composer',
   'myApp.navigation'
 ]).
+  run(['$rootScope', '$state', '$stateParams', function ($rootScope, $state, $stateParams) {
+    //for easy ui state checks (active navigation item for example)
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+  }]).
   config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
     $urlRouterProvider.otherwise('/');
 

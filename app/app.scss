@@ -2,12 +2,14 @@ $fontStack: Work Sans, sans-serif;
 $primaryTrim: rgb(0, 204, 153);
 $primaryBackgroundColor: #fff;
 $primaryFontColor: #262728;
+$deactivatedFontColor: grey;
 $headerBackgroundColor: $primaryFontColor;
 $headerFontColor: $primaryBackgroundColor;
 $borderRadius: 5px;
 
 html, body {
   height: 100%;
+  min-width: 600px;
 }
 
 /* reset box-sizing to default to border-box */
