@@ -17,7 +17,7 @@ $layoutStateDeactivatedFontColor: $deactivatedFontColor;
             margin-right: 0;
           }
           &.active {
-            border-bottom: 2px solid $primaryTrim;
+            border-bottom: 3px solid $primaryTrim;
             font-weight: 700;
           }
           a {
@@ -30,10 +30,7 @@ $layoutStateDeactivatedFontColor: $deactivatedFontColor;
         float: right;
         .action {
           cursor: pointer;
-          margin-right: 13px;
-          &:last-child {
-            margin-right: 0;
-          }
+          margin-right: 0;
           color: $layoutStateDeactivatedFontColor;
           &.active {
             font-weight: 700;
