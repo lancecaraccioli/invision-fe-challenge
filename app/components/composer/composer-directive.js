@@ -2,7 +2,7 @@
 
 angular.module('myApp.composer.composer-directive', [])
 
-.directive('composer', [function() {
+.directive('composer', ['$log', function($log) {
   return {
     restrict: 'EA',
     templateUrl: 'components/composer/composer-directive.html',
@@ -14,6 +14,12 @@ angular.module('myApp.composer.composer-directive', [])
     },
     controller: function ($scope) {
       this.placeholder = 'What\'s on your mind?';
+      this.addPhoto = function () {
+        $log.log('implement add photo');
+      };
+      this.addVideo = function () {
+        $log.log('implement add video');
+      };
     }
   };
 }]);

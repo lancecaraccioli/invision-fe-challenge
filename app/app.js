@@ -8,7 +8,8 @@ angular.module('myApp', [
   'myApp.photos',
   'myApp.videos',
   'myApp.user',
-  'myApp.composer'
+  'myApp.composer',
+  'myApp.navigation'
 ]).
   config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
     $urlRouterProvider.otherwise('/');
