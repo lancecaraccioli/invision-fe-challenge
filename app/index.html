@@ -16,10 +16,14 @@
 </head>
 <body ng-app="myApp" ng-controller="AppCtrl as app">
   <header>
-    <div class="logo">Simply Social</div>
-    <div class="compose">New Message</div>
-    <div class="search"><label id="search-label">Search<input id="search" type="text" /></label></div>
-    <user-menu user="app.authenticatedUser"></user-menu>
+    <section>
+      <div class="logo"><a href ui-sref="landing"><span class="reader-only">Simply Social</span></a></div>
+      <div class="actions">
+        <div class="compose"><span class="reader-only">New Message</span></div>
+        <div class="search"><label id="search-label">Search<input id="search" type="text" /></label></div>
+        <user-menu user="app.authenticatedUser"></user-menu>
+      </div>
+    </section>
   </header>
   <main>
     <section>

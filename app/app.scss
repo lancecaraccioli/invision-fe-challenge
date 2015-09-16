@@ -45,6 +45,27 @@ body {
     color: $primaryBackgroundColor;
     height: 60px;
     width: 100%;
+    > section {
+      max-width: 1350px;
+      margin: 0 auto;
+      padding: 18px 15px 0;
+      .logo {
+        float:left;
+        > a {
+          display:inline-block;
+          height: 25px;
+          width: 137px;
+          background: url(/img/logo.png) no-repeat;
+        }
+      }
+      .actions {
+        float: right;
+        > * {
+          float: left;
+        }
+      }
+    }
+
   }
   > main {
     position: relative;
