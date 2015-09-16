@@ -1,12 +1,27 @@
-$fontStack: Montserrat, sans-serif;
-$primaryTrim: darkcyan;
+$fontStack: Work Sans, sans-serif;
+$primaryTrim: rgb(0, 204, 153);
 $primaryBackgroundColor: #fff;
 $primaryFontColor: #262728;
 $headerBackgroundColor: $primaryFontColor;
 $headerFontColor: $primaryBackgroundColor;
+$borderRadius: 5px;
 
 html, body {
   height: 100%;
+}
+
+/* reset box-sizing to default to border-box */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a, a:hover {
+  text-decoration: none;
+  color: inherit;
 }
 
 body {
@@ -21,35 +36,42 @@ body {
     width: 100%;
   }
   & > main {
+    margin-left: 1px;
     position: relative;
     z-index: 10;
     header {
       background-image: url(/img/background-slice.jpg);
-      background-position: top left;
+      background-position: bottom left;
       background-repeat: repeat-x;
-      height: 432px;
+      height: 425px;
       width: 100%;
       position: relative;
       > div {
-        display:block;
+        display: block;
         width: 100%;
         height: 100%;
         position: absolute;
         background-image: url(/img/background.jpg);
-        background-position: center top;
+        background-position: center bottom;
         background-repeat: no-repeat;
+      }
+      > section {
+        width: 600px;
+        margin: 0 auto;
+        height: 100%;
       }
     }
   }
 }
 
-
-.menu {
+.menu-horizontal {
+  margin: 0;
+  padding: 0;
   display: inline-block;
-
   list-style: none;
   & > li {
     display: inline-block;
-
   }
 }
+
+@import 'components/composer/composer';

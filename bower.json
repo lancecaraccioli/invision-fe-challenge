@@ -12,6 +12,8 @@
     "angular-mocks": "~1.4.0",
     "html5-boilerplate": "~5.2.0",
     "angular-ui-router": "~0.2.15",
-    "material-design-icons": "~2.0.0"
+    "material-design-icons": "~2.0.0",
+    "angular-placeholder-tai": "~1.0.2",
+    "font-awesome": "~4.4.0"
   }
 }

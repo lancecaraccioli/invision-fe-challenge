@@ -3,10 +3,12 @@
 angular.module('myApp', [
   'ngRoute',
   'ui.router',
+  'taiPlaceholder',
   'myApp.posts',
   'myApp.photos',
   'myApp.videos',
-  'myApp.user'
+  'myApp.user',
+  'myApp.composer'
 ]).
   config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
     $urlRouterProvider.otherwise('/');

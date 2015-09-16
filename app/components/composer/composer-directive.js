@@ -1,27 +1,19 @@
 'use strict';
 
-angular.module('myApp.user.user-menu-directive', [])
+angular.module('myApp.composer.composer-directive', [])
 
-.directive('userMenu', ['authentication', function() {
+.directive('composer', [function() {
   return {
     restrict: 'EA',
-    templateUrl: 'components/user/user-menu-directive.html',
+    templateUrl: 'components/composer/composer-directive.html',
     replace: true,
-    controllerAs: 'userMenu',
-    scope: {
-      user: '=user'
-    },
+    controllerAs: 'composer',
+
     link: function (scope, element, attrs) {
 
-      element.on('click', function () {
-        element.toggleClass('open');
-      });
-      scope.$on('$destroy', function () {
-        element.off('click');
-      });
     },
     controller: function ($scope) {
-      this.user = $scope.user;
+      this.placeholder = 'What\'s on your mind?';
     }
   };
 }]);

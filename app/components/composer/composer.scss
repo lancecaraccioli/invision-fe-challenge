@@ -1,0 +1,50 @@
+$composerFontColor: lighten($primaryTrim, 40%);
+
+.composer {
+  font-weight: 100;
+  background-color: darken(rgba($primaryTrim, 0.7), 5%);
+  height: 158px;
+  width: 578px;
+  margin: 0 auto;
+  border-radius: $borderRadius;
+  margin-top: 123px;
+  padding: 42px 30px;
+  color: $composerFontColor;
+  font-size: 14px;
+  input.message {
+    width:100%;
+    border: 0;
+    background-color: transparent;
+    margin-bottom: 35px;
+    /*color: #70c9b3;*/
+    &:focus {
+      outline: 0;
+    }
+    font-size: 30px;
+  }
+  .placeholder {
+    color: $composerFontColor;
+  }
+  ::-webkit-input-placeholder {
+    color: $composerFontColor;
+  }
+  :-moz-placeholder {
+    color: $composerFontColor;
+  }
+  ::moz-placeholder {
+    color: $composerFontColor;
+  }
+  :-ms-input-placeholder {
+    color: $composerFontColor;
+  }
+
+  .actions {
+    .action {
+      cursor: pointer;
+      margin-right: 40px;
+      a {
+        padding-left: 5px;
+      }
+    }
+  }
+}
