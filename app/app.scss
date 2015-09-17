@@ -39,16 +39,17 @@ body {
   font-family: $fontStack;
   color: $primaryFontColor;
   > header {
-    position: relative;
+    position: fixed;
     z-index: 30;
     background-color: $headerBackgroundColor;
     color: $primaryBackgroundColor;
     height: 60px;
     width: 100%;
     > section {
+      height: 100%;
       max-width: 1350px;
       margin: 0 auto;
-      padding: 18px 15px 0;
+      padding: 19px 24px 0;
       .logo {
         float:left;
         > a {
@@ -68,6 +69,7 @@ body {
 
   }
   > main {
+    padding-top:60px;
     position: relative;
     z-index: 20;
     > section:first-child {
@@ -86,7 +88,9 @@ body {
         background-position: center bottom;
         background-repeat: no-repeat;
       }
-
+    }
+    > section[ui-view] {
+      padding-top: 50px;
     }
   }
   > footer {
@@ -116,3 +120,4 @@ body {
 
 @import 'components/composer/composer';
 @import 'components/navigation/navigation';
+@import 'components/post/post';

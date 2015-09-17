@@ -9,7 +9,8 @@ angular.module('myApp', [
   'myApp.videos',
   'myApp.user',
   'myApp.composer',
-  'myApp.navigation'
+  'myApp.navigation',
+  'myApp.post'
 ]).
   run(['$rootScope', '$state', '$stateParams', function ($rootScope, $state, $stateParams) {
     //for easy ui state checks (active navigation item for example)
