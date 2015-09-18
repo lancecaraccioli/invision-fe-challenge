@@ -11,6 +11,7 @@ angular.module('myApp.post.post-service', ['myApp.user.user-service'])
       getPhotoPosts: function() {
         var photoPosts = [];
         for (var i = 0; i < posts.length; i++) {
+
           if (posts[i].attachment && posts[i].attachment.type === 'photo') {
             photoPosts.push(posts[i]);
           }
@@ -20,7 +21,7 @@ angular.module('myApp.post.post-service', ['myApp.user.user-service'])
       getVideoPosts: function() {
         var videoPosts = [];
         for (var i = 0; i < posts.length; i++) {
-          if (posts[i].attachment && posts[i].attachment.type === 'photo') {
+          if (posts[i].attachment && posts[i].attachment.type === 'video') {
             videoPosts.push(posts[i]);
           }
         }

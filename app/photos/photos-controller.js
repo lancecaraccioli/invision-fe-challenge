@@ -9,12 +9,13 @@ angular.module('myApp.photos', ['ui.router', 'myApp.post.post-service'])
       controller: 'PhotosCtrl as photos',
       resolve: {
         posts: function(post) {
+
           return post.getPhotoPosts();
         }
       }
     });
   }])
 
-  .controller('PhotosCtrl', [function(posts) {
+  .controller('PhotosCtrl', ['posts', function(posts) {
     this.posts = posts;
   }]);

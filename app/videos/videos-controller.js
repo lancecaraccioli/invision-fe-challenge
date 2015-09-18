@@ -15,6 +15,6 @@ angular.module('myApp.videos', ['ui.router'])
     });
   }])
 
-  .controller('VideosCtrl', [function(posts) {
+  .controller('VideosCtrl', ['posts', function(posts) {
     this.posts = posts;
   }]);
