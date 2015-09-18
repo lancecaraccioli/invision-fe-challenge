@@ -20,15 +20,24 @@ a, a:hover {
   color: inherit;
 }
 
-.menu-horizontal {
+.menu {
   margin: 0;
   padding: 0;
-  display: inline-block;
+  display: block;
   list-style: none;
+  & > li {
+    display: block;
+  }
+}
+
+.menu-horizontal {
+  @extend .menu;
+  display: inline-block;
   & > li {
     display: inline-block;
   }
 }
+
 
 .reader-only {
   position: absolute;
@@ -42,15 +51,17 @@ body {
     position: fixed;
     z-index: 30;
     background-color: $headerBackgroundColor;
-    color: $primaryBackgroundColor;
+    color: $headerFontColor;
     height: 60px;
     width: 100%;
+    min-width: 600px;
     > section {
       height: 100%;
       max-width: 1350px;
       margin: 0 auto;
-      padding: 19px 24px 0;
+      padding: 15px 24px 0;
       .logo {
+        margin-top: 4px;
         float:left;
         > a {
           display:inline-block;
@@ -121,3 +132,4 @@ body {
 @import 'components/composer/composer';
 @import 'components/navigation/navigation';
 @import 'components/post/post';
+@import 'components/user/user';

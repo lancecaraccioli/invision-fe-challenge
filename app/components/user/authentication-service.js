@@ -5,7 +5,7 @@ angular.module('myApp.user.authentication-service', [])
   .factory('authentication', function() {
     var user = {
       fullName: 'Jessica Tuan',
-      avatarUrl: 'app/img/avatars/jessica-tuan.jpg',
+      avatarUrl: '/img/avatars/jessica-tuan.jpg',
       email: 'jessica@mail.com'
     };
     var tagByOptions = {
