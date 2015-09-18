@@ -1,20 +1,20 @@
 'use strict';
 
-angular.module('myApp.photos', ['ui.router', 'myApp.post'])
+angular.module('myApp.photos', ['ui.router', 'myApp.post.post-service'])
 
-.config(['$stateProvider', function($stateProvider, post) {
-  $stateProvider.state('photos', {
-    url: '/photos',
-    templateUrl: 'photos/photos.html',
-    controller: 'PhotosCtrl as photos',
-    resolve: {
-      posts: function () {
-        return post.getPhotoPosts();
+  .config(['$stateProvider', function($stateProvider) {
+    $stateProvider.state('photos', {
+      url: '/photos',
+      templateUrl: 'photos/photos.html',
+      controller: 'PhotosCtrl as photos',
+      resolve: {
+        posts: function(post) {
+          return post.getPhotoPosts();
+        }
       }
-    }
-  });
-}])
+    });
+  }])
 
-.controller('PhotosCtrl', [function(posts) {
-  this.photos = posts;
-}]);
+  .controller('PhotosCtrl', [function(posts) {
+    this.posts = posts;
+  }]);

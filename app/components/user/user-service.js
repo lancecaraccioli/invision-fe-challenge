@@ -9,6 +9,7 @@ angular.module('myApp.user.user-service', [])
       getUsers: function() {
         return users;
       },
+      //todo hash by userId for O(1) lookups
       getUser: function (userId) {
         for(var i=0; i<users.length; i++) {
           if (users[i].id === userId) {

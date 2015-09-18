@@ -1,19 +1,20 @@
 'use strict';
 
-angular.module('myApp.posts', ['ui.router'])
+angular.module('myApp.posts', ['ui.router', 'myApp.post.post-service'])
 
-.config(['$stateProvider', function($stateProvider) {
-  $stateProvider.state('posts', {
-    url: '/posts',
-    templateUrl: 'posts/posts.html',
-    controller: 'PostsCtrl as posts'
-  });
-}])
+  .config(['$stateProvider', function($stateProvider) {
+    $stateProvider.state('posts', {
+      url: '/posts',
+      templateUrl: 'posts/posts.html',
+      controller: 'PostsCtrl as posts',
+      resolve: {
+        posts: function(post) {
+          return post.getPosts();
+        }
+      }
+    });
+  }])
 
-.controller('PostsCtrl', [function() {
-  this.posts = [
-    'Jim',
-    'Jain',
-    'Jill'
-  ];
-}]);
+  .controller('PostsCtrl', [function(posts) {
+    this.posts = posts;
+  }]);
