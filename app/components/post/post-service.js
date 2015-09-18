@@ -134,9 +134,10 @@ angular.module('myApp.post.post-service', ['myApp.user.user-service'])
         return '<a href>' + p1 + '</a>';
       };
       for (var i = 0; i < posts.length; i++) {
+        posts[i].id = i + 1;
         posts[i].user = user.getUser(posts[i].userId);
         if (posts[i].attachment) {
-          posts[i].attachment = _assetPath + posts[i].userId + '.jpg';
+          posts[i].attachment.url = _assetPath + posts[i].userId + '.jpg';
         }
         //replace newlines with <br /> tags
         posts[i].messageHtml = posts[i].message.replace('\n', '<br />');

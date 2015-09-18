@@ -15,6 +15,6 @@ angular.module('myApp.posts', ['ui.router', 'myApp.post.post-service'])
     });
   }])
 
-  .controller('PostsCtrl', [function(posts) {
+  .controller('PostsCtrl', ['posts', function(posts) {
     this.posts = posts;
   }]);

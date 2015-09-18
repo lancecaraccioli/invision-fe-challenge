@@ -1,0 +1,39 @@
+.post-list {
+  margin: 0 auto;
+  width: 575px;
+}
+
+.post-item {
+  border: 1px solid $primaryBorderColor;
+  border-radius: $borderRadius;
+  margin-bottom: 23px;
+  overflow:hidden;
+  a {
+    color: $secondaryFontColor;
+  }
+  .message-area {
+    font-family: Arial, sans-serif;
+    position:relative;
+    padding: 25px;
+
+    .author-avatar {
+      border-radius: $borderRadius;
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      display: inline-block;
+    }
+    .author-name {
+      font-size: 18px;
+      margin-top: -3px;
+      margin-bottom: 5px;
+    }
+    .message {
+      font-size: 16px;
+    }
+    .author-name, .message {
+      display:block;
+      margin-left: 58px;
+    }
+  }
+}

@@ -2,6 +2,7 @@
 
 angular.module('myApp', [
   'ngRoute',
+  'ngSanitize',
   'ui.router',
   'taiPlaceholder',
   'myApp.posts',

@@ -1,9 +1,10 @@
 $fontStack: Work Sans, sans-serif;
 $primaryBrandColor: rgb(0, 204, 153);
 $primaryBackgroundColor: #fff;
-$primaryFontColor: #262728;
-$primaryBorderColor: #dfe3e6;
-$headerBackgroundColor: $primaryFontColor;
+$primaryFontColor: #7a7e89;
+$primaryBorderColor: #dee2e5;
+$secondaryFontColor: #c8cbd2;
+$headerBackgroundColor: #262729;
 $headerFontColor: $primaryBackgroundColor;
 $navigationFontColor: $headerFontColor;
 $navigationInactiveTabFontColor: darken($navigationFontColor, 25%);

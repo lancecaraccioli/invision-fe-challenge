@@ -1,0 +1,14 @@
+<section class="post-item">
+  <section class="message-area">
+    <div class="author-avatar"><!-- todo avatar directive -->
+      <img ng-src="{{postItem.post.user.avatarUrl}}" />
+    </div>
+    <span class="author-name">
+      <span>{{postItem.post.user.firstName}} {{postItem.post.user.lastName}}</span>
+    </span>
+    <span class="message" ng-bind-html="postItem.post.messageHtml"></span>
+  </section>
+  <section class="attachment-area" ng-if="postItem.post.attachment">
+    <img ng-src="{{postItem.post.attachment.url}}" />
+  </section>
+</section>
