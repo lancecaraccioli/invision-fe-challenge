@@ -2,6 +2,7 @@
 
 angular.module('myApp', [
   'ngRoute',
+  'ngMaterial',
   'ngSanitize',
   'ui.router',
   'taiPlaceholder',

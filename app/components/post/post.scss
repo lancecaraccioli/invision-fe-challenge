@@ -16,22 +16,12 @@
     position:relative;
     padding: 25px;
 
-    .author-avatar {
-      border-radius: $borderRadius;
+    .user-avatar {
       position: absolute;
       top: 25px;
       left: 25px;
-      height: 40px;
-      width: 40px;
-      display: inline-block;
-      img {
-        width: 100%;
-      }
-      &.small {
-        height: 30px;
-        width: 30px;
-      }
     }
+
     .author-name {
       font-size: 18px;
       margin-top: -3px;

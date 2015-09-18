@@ -1,18 +1,17 @@
 <div class="user-menu">
-    <div class="author-avatar small"><!-- todo avatar directive -->
-        <img ng-src="{{userMenu.user.avatarUrl}}" />
-    </div>
-    <div class="toggle">
-        <span class="fa fa-caret-down"></span>
-    </div>
-    <div class="dropdown">
-        <span class="fa fa-caret-up arrow-up"></span>
-        <ul class="menu">
-            <li><a href>Profile</a></li>
-            <li><a href>Followers</a></li>
-            <li><a href>Following</a></li>
-            <li><a ui-sref="settings">Settings</a></li>
-        </ul>
-    </div>
-
+  <div class="user-avatar small"><!-- todo user-avatar directive -->
+    <img ng-src="{{userMenu.user.avatarUrl}}"/>
+  </div>
+  <div class="toggle">
+    <span class="fa fa-caret-down"></span>
+  </div>
+  <div class="dropdown">
+    <span class="fa fa-caret-up arrow-up"></span>
+    <ul class="menu">
+      <li><a href>Profile</a></li>
+      <li><a href>Followers</a></li>
+      <li><a href>Following</a></li>
+      <li><a ui-sref="settings">Settings</a></li>
+    </ul>
+  </div>
 </div>
