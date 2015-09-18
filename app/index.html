@@ -19,9 +19,10 @@
     <section>
       <div class="logo"><a href ui-sref="landing"><span class="reader-only">Simply Social</span></a></div>
       <div class="actions">
-        <div class="compose"><span class="reader-only">New Message</span></div>
+        <!-- todo compose-button directive -->
+        <div class="compose" ng-click="app.showComposerDialog()"><span class="reader-only">New Message</span></div>
+        <!-- todo search directive -->
         <div class="search">
-          <!-- todo search directive -->
           <label id="search-label">
             <span class="search-icon fa fa-search"><span class="reader-only">Search</span></span>
             <input id="search" type="text" /></label>

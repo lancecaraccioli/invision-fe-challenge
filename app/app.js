@@ -26,6 +26,22 @@ angular.module('myApp', [
       url: '/'
     });
   }]).
-  controller('AppCtrl', ['authentication', function(authentication) {
-    this.authenticatedUser = authentication.user;////
+  controller('AppCtrl', ['authentication', '$mdDialog', function(authentication, $mdDialog) {
+    this.authenticatedUser = authentication.user;
+
+    /**
+     * TODO migrate once compose-button directive is created
+     */
+    this.showComposerDialog = function () {
+      var alert = $mdDialog.alert({
+        title: 'Attention',
+        content: 'This is an example of how easy dialogs can be!',
+        ok: 'Close'
+      });
+      $mdDialog
+        .show(alert)
+        .finally(function () {
+          alert = undefined;
+        });
+    };
   }]);

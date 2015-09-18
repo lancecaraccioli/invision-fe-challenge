@@ -38,7 +38,6 @@ a, a:hover {
   }
 }
 
-
 .reader-only {
   position: absolute;
   left: -10000px;
@@ -61,6 +60,11 @@ a, a:hover {
     height: 30px;
     width: 30px;
   }
+}
+
+md-dialog {
+  position:relative;
+  top: -210px;
 }
 
 body {
