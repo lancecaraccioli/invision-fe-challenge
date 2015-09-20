@@ -20,11 +20,9 @@ angular.module('myApp', [
     $rootScope.$stateParams = $stateParams;
   }]).
   config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.when('/', '/posts');
+    $urlRouterProvider.otherwise('/posts');
 
-    $stateProvider.state('landing', {
-      url: '/'
-    });
   }]).
   controller('AppCtrl', ['authentication', '$mdDialog', function(authentication, $mdDialog) {
     this.authenticatedUser = authentication.user;
