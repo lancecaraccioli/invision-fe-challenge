@@ -24,22 +24,32 @@ angular.module('myApp', [
     $urlRouterProvider.otherwise('/posts');
 
   }]).
-  controller('AppCtrl', ['authentication', '$mdDialog', function(authentication, $mdDialog) {
+  controller('AppCtrl', ['authentication', '$mdDialog', '$scope', function(authentication, $mdDialog, $scope) {
     this.authenticatedUser = authentication.user;
-
+    console.log('AppCtrl scope:', $scope);
     /**
      * TODO migrate once compose-button directive is created
      */
     this.showComposerDialog = function () {
-      var alert = $mdDialog.alert({
-        title: 'Attention',
-        content: 'This is an example of how easy dialogs can be!',
-        ok: 'Close'
-      });
+
       $mdDialog
-        .show(alert)
-        .finally(function () {
-          alert = undefined;
+        .show({
+          clickOutsideToClose: true,
+          scope: $scope,
+          preserveScope: true,
+          template: ''+
+                    '<md-dialog>' +
+                    '  <md-dialog-content>' +
+                    '     <composer class="modal" ' +
+                    '               title="\'Create new message\'"' +
+                    '               include-post-button="true"></composer>' +
+                    '  </md-dialog-content>' +
+                    '</md-dialog>',
+          controller: ['$scope', '$mdDialog', function DialogController($scope, $mdDialog) {
+            $scope.closeDialog = function() {
+              $mdDialog.hide();
+            };
+          }]
         });
     };
   }]);

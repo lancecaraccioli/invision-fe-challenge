@@ -3,19 +3,21 @@ $composerFontColor: lighten($primaryBrandColor, 40%);
 .composer {
   font-weight: 100;
   background-color: darken(rgba($primaryBrandColor, 0.7), 5%);
-  height: 156px;
-  width: 578px;
   margin: 0 auto;
   border-radius: $borderRadius;
-  margin-top: 123px;
-  padding: 42px 30px;
+  padding: 38px 30px;
   color: $composerFontColor;
   font-size: 14px;
-  input.message {
+  .title {
+    font-weight:normal;
+    margin-top: 0;
+  }
+  .message {
+    resize: none;
+    max-height: 1.6em;
     width:100%;
     border: 0;
-    background-color: transparent;
-    margin-bottom: 35px;
+    margin-bottom: 27px;
     /*color: #70c9b3;*/
     &:focus {
       outline: 0;
@@ -23,28 +25,72 @@ $composerFontColor: lighten($primaryBrandColor, 40%);
     font-size: 30px;
   }
   .placeholder {
-    color: $composerFontColor;
+    color: inherit;
   }
   ::-webkit-input-placeholder {
-    color: $composerFontColor;
+    color: inherit;
   }
   :-moz-placeholder {
-    color: $composerFontColor;
+    color: inherit;
   }
   ::moz-placeholder {
-    color: $composerFontColor;
+    color: inherit;
   }
   :-ms-input-placeholder {
-    color: $composerFontColor;
+    color: inherit;
   }
 
   .actions {
+    width: 100%;
     .action {
       cursor: pointer;
       margin-right: 40px;
+      vertical-align: middle;
       a {
         padding-left: 5px;
       }
     }
+    .action:last-child{
+      margin-right: 0;
+    }
+  }
+
+  &.main {
+    margin-top: 123px;
+    height: 156px;
+    width: 578px;
+    .message {
+      background-color: transparent;
+    }
+  }
+  &.modal {
+    width: 528px;
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+    .message {
+      min-height: 4.5em;
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+    .actions {
+      color: #aeb1b8;
+      .post {
+        margin-top: -5px;
+        float: right;
+        button { /* todo base on themeable components like md-button */
+          margin: 0;
+          color: #fff;/*todo base on variable */
+          background-color:#01b286;/*todo base on variable */
+          text-transform: capitalize;
+          font-weight: bold;
+        }
+      }
+    }
+    .title {
+      font-size: 1.2em;
+    }
   }
 }
+
+

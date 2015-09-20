@@ -11,6 +11,10 @@ html {
   box-sizing: border-box;
 }
 
+button, select, html, textarea, input {
+  font-family: inherit;
+}
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -35,6 +39,7 @@ a, a:hover {
   display: inline-block;
   & > li {
     display: inline-block;
+    vertical-align: middle;
   }
 }
 
@@ -62,9 +67,13 @@ a, a:hover {
   }
 }
 
-md-dialog {
-  position:relative;
-  top: -210px;
+md-dialog  {
+  md-dialog-content {
+    padding-top: 20px;
+    padding-bottom: 15px;
+    background-color: #dee1e6;
+    color: #71767c;
+  }
 }
 
 body {
@@ -102,7 +111,7 @@ body {
         color: #5e5f61;
         border-radius: $borderRadius;
         margin-left: 23px;
-        padding: 1px 5px 0px;
+        padding: 1px 5px 0;
         input {
           border: none;
           background-color: transparent;

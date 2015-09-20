@@ -1,9 +1,13 @@
 <section class="composer">
-  <input class="message" type="text" ng-model="composer.message" placeholder="{{::composer.placeholder}}" />
+  <h2 ng-if="composer.title" class="title">{{::composer.title}}</h2>
+  <textarea class="message" ng-model="composer.message" placeholder="{{::composer.placeholder}}" ></textarea>
   <ul class="menu-horizontal actions">
     <li class="action" ng-click="composer.addPhoto()">
       <span class="fa fa-camera"><a href>Add Photo</a></span></li>
     <li class="action" ng-click="composer.addVideo()">
       <span class="fa fa-video-camera"><a href>Add Video</a></span></li>
+    <li class="action post" ng-if="composer.includePostButton">
+      <md-button>Post</md-button>
+    </li>
   </ul>
 </section>
