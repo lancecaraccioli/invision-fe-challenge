@@ -1,4 +1,65 @@
-<h1>Settings</h1>
-<form name="settings">
-  Settings form
-</form>
+<section class="settings">
+  <h1>Settings</h1>
+  <form name="settingsForm">
+    <fieldset class="account">
+      <legend>Account</legend>
+      <div class="left-section">
+        <user-avatar user="settings.user" size="'large'"></user-avatar>
+        <button ng-click="settings.changeAvatar($event)">Change</button>
+      </div>
+      <div class="right-section">
+        <div class="input-container">
+          <label class="reader-only">Full Name</label>
+          <span class="fa fa-user"></span>
+          <input name="fullName" placeholder="Full Name" ng-model="settings.user.fullName" required minlength="2" />
+
+        </div>
+        <div class="input-container">
+          <label class="reader-only">Email</label>
+          <span class="fa fa-envelope"></span>
+          <input name="email" placeholder="Email Address" ng-model="settings.user.email" required minlength="2" />
+
+        </div>
+        <div class="input-container">
+          <label class="reader-only">Password</label>
+          <span class="fa fa-lock"></span>
+          <input name="password" type="password" placeholder="Password" ng-model="settings.user.password" required minlength="8" />
+
+        </div>
+      </div>
+    </fieldset>
+    <fieldset class="notifications">
+      <legend>Notifications</legend>
+      <md-switch ng-model="settings.settings.notifications.email.markedFavorites" aria-label="email when favorited">
+        email me when my posts are marked as favorites
+      </md-switch>
+      <md-switch ng-model="settings.settings.notifications.email.mentioned" aria-label="email when mentioned">
+        email me when I'm mentioned
+      </md-switch>
+      <md-switch ng-model="settings.settings.notifications.email.receiveReply" aria-label="email when receive reply">
+        email me when I receive a reply
+      </md-switch>
+      <md-switch ng-model="settings.settings.notifications.email.followed" aria-label="email when followed">
+        email me when someone follows me
+      </md-switch>
+    </fieldset>
+    <fieldset class="privacy">
+      <legend>Privacy</legend>
+      <md-radio-group ng-model="selected">
+        <md-radio-button ng-value="'anyone'" aria-label="allow anyone to tag me">
+          allow anyone to tag me
+        </md-radio-button>
+        <md-radio-button ng-value="'following'" aria-label="only allow people I follow to tag me">
+          only allow people I follow to tag me
+        </md-radio-button>
+        <md-radio-button ng-value="'none'" aria-label="don't allow anyone to tag me">
+          don't allow anyone to tag me
+        </md-radio-button>
+      </md-radio-group>
+    </fieldset>
+    <fieldset class="save">
+      <md-button>Save Changes</md-button>
+    </fieldset>
+  </form>
+</section>
+

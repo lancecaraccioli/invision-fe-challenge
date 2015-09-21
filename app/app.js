@@ -20,7 +20,7 @@ angular.module('myApp', [
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
   }]).
-  config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
+  config(['$urlRouterProvider', '$stateProvider', '$mdThemingProvider', function($urlRouterProvider, $stateProvider, $mdThemingProvider) {
     $urlRouterProvider.when('/', '/posts/');
     $urlRouterProvider.otherwise('/posts/');
 
@@ -64,6 +64,12 @@ angular.module('myApp', [
         }
       }
     });
+
+    //TODO use material design palettes instead of custom colors or a custom built material design palette
+    //$mdThemingProvider.theme('default')
+    //  .primaryPalette('teal')
+    //  .accentPalette('teal')
+    //  .dark();
 
   }]).
   controller('AppCtrl', ['authentication', '$mdDialog', '$scope', function(authentication, $mdDialog, $scope) {

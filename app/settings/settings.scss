@@ -1,0 +1,115 @@
+section.settings {
+  max-width: 600px;
+  margin: 0 auto;
+  h1 {
+    font-weight: normal;
+    margin-top: 0;
+    color: #3e454d;
+  }
+  fieldset {
+    border-bottom: 1px solid #e2e5e8;
+    margin-bottom: 40px;
+    legend {
+      margin-bottom: 25px;
+    }
+    padding-bottom: 40px;
+  }
+  fieldset.account {
+    .left-section {
+      width: 85px;
+      margin-right: 50px;
+      float: left;
+      button {
+        margin-top: 5px;
+        color: #e2e5e8;
+        width: 100%;
+        border-radius: $borderRadius;
+        background-color: transparent;
+        border: 1px solid #e2e5e8;
+      }
+    }
+    .right-section {
+      float: left;
+      width: 465px;
+    }
+  }
+
+  .input-container {
+    margin-bottom: 20px;
+    padding: 5px 12px;
+    border-radius: $borderRadius;
+    border: 1px solid #e2e5e8;
+    display: inline-block;
+    width: 366px;
+    .fa {
+      display: inline-block;
+    }
+    input {
+      display: inline-block;
+      border: 0;
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+
+  /* todo create custom angular material palette build */
+  md-switch {
+    margin-bottom: 20px;
+    &.md-checked {
+      .md-bar {
+        background-color: #01b286;
+      }
+      .md-thumb {
+        background-color: #fff;
+      }
+
+    }
+    .md-container {
+      width: 52px;
+      margin-right: 25px;
+    }
+    .md-bar {
+      left: -1px;
+      width: 52px;
+      top: 1px;
+      height: 27px;
+      border-radius: 13px;
+    }
+    .md-thumb-container {
+      width: 25px;
+    }
+    .md-thumb {
+      height: 25px;
+      width: 25px;
+    }
+  }
+
+  md-radio-button {
+    .md-container, .md-off, .md-on {
+      width: 25px;
+      height: 25px;
+    }
+    &.md-checked .md-off {
+      border-color: rgba(0,0,0,0.54);
+    }
+    .md-on {
+      background-color: #01b286;
+    }
+    &.md-checked .md-on {
+      background-color: #01b286;
+      transform: scale(0.6);
+    }
+
+  }
+  fieldset.save {
+    border: 0;
+    button {
+      margin: 0;
+      color: #fff;
+      background-color: #01b286;
+      text-transform: capitalize;
+      font-weight: bold;
+    }
+  }
+}
