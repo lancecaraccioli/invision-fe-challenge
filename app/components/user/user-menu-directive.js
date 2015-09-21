@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.user.user-menu-directive', [])
+angular.module('myApp.user.user-menu-directive', ['myApp.user.user-avatar-directive'])
 
 .directive('userMenu', ['authentication', function() {
   return {

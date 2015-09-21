@@ -1,7 +1,5 @@
 <div class="user-menu">
-  <div class="user-avatar small"><!-- todo user-avatar directive -->
-    <img ng-src="{{userMenu.user.avatarUrl}}"/>
-  </div>
+  <user-avatar user="userMenu.user" size="'small'"></user-avatar>
   <div class="toggle">
     <span class="fa fa-caret-down"></span>
   </div>
@@ -11,7 +9,7 @@
       <li><a href>Profile</a></li>
       <li><a href>Followers</a></li>
       <li><a href>Following</a></li>
-      <li><a ui-sref="settings">Settings</a></li>
+      <li><a ui-sref="settings.index">Settings</a></li>
     </ul>
   </div>
 </div>

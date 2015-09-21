@@ -1,8 +1,6 @@
 <section class="post-item">
   <section class="message-area">
-    <div class="user-avatar"><!-- todo user-avatar directive -->
-      <img ng-src="{{postItem.post.user.avatarUrl}}" />
-    </div>
+    <user-avatar user="postItem.post.user"></user-avatar>
     <span class="author-name">
       <span>{{postItem.post.user.firstName}} {{postItem.post.user.lastName}}</span>
     </span>

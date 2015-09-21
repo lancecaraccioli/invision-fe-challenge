@@ -48,24 +48,7 @@ a, a:hover {
   left: -10000px;
 }
 
-.user-avatar {
-  border-radius: $borderRadius;
-  height: 40px;
-  width: 40px;
-  display: inline-block;
-  overflow: hidden;
-  img {
-    width: 100%;
-  }
-  &.large {
-    height: 85px;
-    width: 85px;
-  }
-  &.small {
-    height: 30px;
-    width: 30px;
-  }
-}
+
 
 md-dialog {
   md-dialog-content {
@@ -201,3 +184,5 @@ body {
 @import 'components/navigation/navigation';
 @import 'components/post/post';
 @import 'components/user/user';
+@import 'settings/settings';
+
