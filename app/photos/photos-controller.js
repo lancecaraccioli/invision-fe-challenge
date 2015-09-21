@@ -3,13 +3,12 @@
 angular.module('myApp.photos', ['ui.router', 'myApp.post.post-service'])
 
   .config(['$stateProvider', function($stateProvider) {
-    $stateProvider.state('photos', {
-      url: '/photos',
+    $stateProvider.state('photos.index', {
+      url: '/',
       templateUrl: 'photos/photos.html',
       controller: 'PhotosCtrl as photos',
       resolve: {
         posts: function(post) {
-
           return post.getPhotoPosts();
         }
       }

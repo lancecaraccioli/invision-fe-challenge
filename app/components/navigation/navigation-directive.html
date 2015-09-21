@@ -1,12 +1,12 @@
 <nav class="navigation-bar">
   <div class="navigation">
     <ul class="menu-horizontal site-navigation">
-      <li ng-class="{active: $state.current.name == 'posts'}">
-        <a ui-sref="posts">All Posts</a></li>
-      <li ng-class="{active: $state.current.name == 'photos'}">
-        <a ui-sref="photos">Photos</a></li>
-      <li ng-class="{active: $state.current.name == 'videos'}">
-        <a ui-sref="videos">Videos</a></li>
+      <li ng-class="{active: $state.current.name == 'posts.index'}">
+        <a ui-sref="posts.index">All Posts</a></li>
+      <li ng-class="{active: $state.current.name == 'photos.index'}">
+        <a ui-sref="photos.index">Photos</a></li>
+      <li ng-class="{active: $state.current.name == 'videos.index'}">
+        <a ui-sref="videos.index">Videos</a></li>
     </ul>
     <ul class="menu-horizontal layout-state-options">
       <li ng-class="{active: $stateParams.itemLayout == 'list'}">

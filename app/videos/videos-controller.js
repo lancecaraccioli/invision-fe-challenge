@@ -3,8 +3,8 @@
 angular.module('myApp.videos', ['ui.router'])
 
   .config(['$stateProvider', function($stateProvider) {
-    $stateProvider.state('videos', {
-      url: '/videos',
+    $stateProvider.state('videos.index', {
+      url: '/',
       templateUrl: 'videos/videos.html',
       controller: 'VideosCtrl as videos',
       resolve: {

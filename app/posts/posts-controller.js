@@ -3,8 +3,8 @@
 angular.module('myApp.posts', ['ui.router', 'myApp.post.post-service'])
 
   .config(['$stateProvider', function($stateProvider) {
-    $stateProvider.state('posts', {
-      url: '/posts',
+    $stateProvider.state('posts.index', {
+      url: '/',
       templateUrl: 'posts/posts.html',
       controller: 'PostsCtrl as posts',
       resolve: {

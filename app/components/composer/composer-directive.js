@@ -10,7 +10,7 @@ angular.module('myApp.composer.composer-directive', [])
     controllerAs: 'composer',
     scope: {
       title: '=title',
-      placeholder: '=placeholder',
+      placeholder: '=hint',
       includePostButton: '=includePostButton'
     },
     link: function (scope, element, attrs) {

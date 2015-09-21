@@ -17,7 +17,7 @@
 <body ng-app="myApp" ng-controller="AppCtrl as app">
   <header>
     <section>
-      <div class="logo"><a href ui-sref="landing"><span class="reader-only">Simply Social</span></a></div>
+      <div class="logo"><a href ui-sref="posts.index"><span class="reader-only">Simply Social</span></a></div>
       <div class="actions">
         <!-- todo compose-button directive -->
         <div class="compose" ng-click="app.showComposerDialog()"><span class="reader-only">New Message</span></div>
@@ -32,15 +32,17 @@
     </section>
   </header>
   <main>
-    <section>
+    <section ui-view="branding">
       <header>
-        <composer class="main" placeholder="'What\'s on your mind?'"></composer>
+        <section>
+          <composer class="main" hint="'What\'s on your mind?'"></composer>
+        </section>
       </header>
       <footer>
         <navigation></navigation>
       </footer>
     </section>
-    <section ui-view>
+    <section ui-view="main">
       <span>TODO add throbber</span>
     </section>
   </main>

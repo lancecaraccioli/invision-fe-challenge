@@ -20,13 +20,52 @@ angular.module('myApp', [
     $rootScope.$stateParams = $stateParams;
   }]).
   config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
-    $urlRouterProvider.when('/', '/posts');
-    $urlRouterProvider.otherwise('/posts');
+    $urlRouterProvider.when('/', '/posts/');
+    $urlRouterProvider.otherwise('/posts/');
+
+    $stateProvider.state('posts', {
+      url: '/posts',
+      abstract: true,
+      views: {
+        'main': {
+          template: '<ui-view />'
+        }
+      }
+    });
+    $stateProvider.state('photos', {
+      url: '/photos',
+      abstract: true,
+      views: {
+        'main': {
+          template: '<ui-view />'
+        }
+      }
+    });
+    $stateProvider.state('videos', {
+      url: '/videos',
+      abstract: true,
+      views: {
+        'main': {
+          template: '<ui-view />'
+        }
+      }
+    });
+
+    $stateProvider.state('settings', {
+      url: '/settings',
+      views: {
+        'branding': {
+          template: '<div><div>'
+        },
+        'main': {
+          template: '<ui-view />'
+        }
+      }
+    });
 
   }]).
   controller('AppCtrl', ['authentication', '$mdDialog', '$scope', function(authentication, $mdDialog, $scope) {
     this.authenticatedUser = authentication.user;
-    console.log('AppCtrl scope:', $scope);
     /**
      * TODO migrate once compose-button directive is created
      */
