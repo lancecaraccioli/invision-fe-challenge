@@ -12,7 +12,8 @@ angular.module('myApp', [
   'myApp.user',
   'myApp.composer',
   'myApp.navigation',
-  'myApp.post'
+  'myApp.post',
+  'myApp.settings'
 ]).
   run(['$rootScope', '$state', '$stateParams', function ($rootScope, $state, $stateParams) {
     //for easy ui state checks (active navigation item for example)
@@ -53,6 +54,7 @@ angular.module('myApp', [
 
     $stateProvider.state('settings', {
       url: '/settings',
+      abstract: true,
       views: {
         'branding': {
           template: '<div><div>'
